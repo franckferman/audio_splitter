@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "audio-splitter"
+version = "0.1.0"
+description = "A tool to split audio files into segments using FFmpeg."
+authors = ["Franck Ferman <contact@franckferman.fr>"]
+license = "MIT"
+readme = "README.md"
+keywords = ["audio", "split", "ffmpeg", "tool"]
+homepage = "https://github.com/franckferman/audio-splitter"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+ffmpeg-python = "^0.2.0"
+typer = "0.13.0"
+tqdm = "4.67.0"
+colored = "2.2.4"
+
+[tool.poetry.dev-dependencies]
+black = "^22.1.0"
+flake8 = "^4.0.1"
+mypy = "^0.910"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+audio-splitter = "src.main:app"
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 88
+exclude = ["build", "dist"]
+
+[tool.mypy]
+plugins = []
